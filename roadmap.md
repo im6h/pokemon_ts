@@ -1,25 +1,26 @@
 ### Roadmap project
-- Clone images of pokemons in website
-- Detail pokemon api return: 
-  ***name***, 
-  ***weight***, 
-  ***height***,
-  ***image_url***,
-  ***type***,
-  ***weakness***,
-  ***next_evolution***,
-  ***prev_evolution***,
-  ***id***,
-  ***number***,
-  ***base_stast***,
-  ***next_evolution***,
-  ***info***,
-  ***next_evolution***,
-  ***next_evolution***
+
+- :white_check_mark: Clone images of pokemons in website
+- Detail pokemon api return:
+  **_name_**,
+  **_weight_**,
+  **_height_**,
+  **_image_url_**,
+  **_type_**,
+  **_weakness_**,
+  **_next_evolution_**,
+  **_prev_evolution_**,
+  **_id_**,
+  **_number_**,
+  **_base_stast_**,
+  **_next_evolution_**,
+  **_info_**,
+  **_next_evolution_**,
+  **_next_evolution_**
   for detail pokemon.
-- List pokemon api return: 
-  ***name***,
-  ***id***,
-  ***number***,
-  ***image_url***,
-  ***type***,
+- List pokemon api return:
+  **_name_**,
+  **_id_**,
+  **_number_**,
+  **_image_url_**,
+  **_type_**,
