@@ -8,16 +8,22 @@ interface Pokedex {
 
 class PokedexStore {
 	@observable pokedex: Pokedex[] = [];
-	// @action async fetchListPokemon(offset: number, limit: number) {
+
+	/**
+	 * function fetchListPokemon: fetch list pokemon to adapter pokedex variable,
+	 * @param: no param
+	 */
 	@action async fetchListPokemon() {
 		try {
 			let response = await axios.get(
 				`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`
 			);
+
+			// check response status and response data
 			if (response.status === 200 && response.data) {
 				this.pokedex = response.data.pokemon;
 			} else {
-				this.pokedex = [];
+				this.pokedex = []; // return array empty if response error
 			}
 		} catch (error) {
 			console.log(error);

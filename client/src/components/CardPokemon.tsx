@@ -20,12 +20,16 @@ interface Props {
  * function CardPokemon render view card pokemon.
  * @param Props
  */
-function CardPokemon({ num, name, img, type }: Props) {
+function CardPokemon({ num, name, type }: Props) {
 	return (
 		<div className="card">
 			{/* image to display pokemon */}
 			<div className="card__imagePokemon">
-				<img src={img} alt={name} loading="lazy" />
+				<img
+					src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${num}.png`}
+					alt={name}
+					loading="lazy"
+				/>
 			</div>
 			{/* image to display pokemon */}
 

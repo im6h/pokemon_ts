@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 // import styles scss
 import '../styles/pages/home.scss';
+
 /**
  * function Home to render home page.
  * No params
@@ -14,7 +15,7 @@ import '../styles/pages/home.scss';
 function Home() {
 	// use pokedexStore
 	const pokedexStore = React.useContext(PokedexStore);
-
+	const regex: RegExp = /\W/;
 	// use useEffect to fetch all pokemon with function fecthListPokemon in pokedexStore
 	useEffect(() => {
 		pokedexStore.fetchListPokemon();
@@ -27,7 +28,10 @@ function Home() {
 					return (
 						// card pokemon
 						<Link
-							to={`/detail/${pokemon.name.toLowerCase()}`}
+							to={`/detail/${pokemon.name
+								.replace(' ', '')
+								.replace(regex, '-')
+								.toLowerCase()}`}
 							key={pokemon.num}
 						>
 							<CardPokemon
