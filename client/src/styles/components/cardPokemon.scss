@@ -9,6 +9,7 @@
 		border-radius: 4px;
 		padding: 4px;
 		background-color: #f2f2f2;
+		cursor: pointer;
 	}
 	&__infoPokemon {
 		&-num {
@@ -29,5 +30,20 @@
 		display: flex;
 		width: 100%;
 		justify-content: flex-start;
+	}
+	img {
+		&:hover {
+			animation-name: zoom;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+		}
+		@keyframes zoom {
+			from {
+				transform: scale(1);
+			}
+			to {
+				transform: scale(1.2);
+			}
+		}
 	}
 }

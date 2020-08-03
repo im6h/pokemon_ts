@@ -1,12 +1,21 @@
+// import lib, component
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import PokedexStore from '../stores/pokedex';
 import CardPokemon from '../components/CardPokemon';
-import '../styles/pages/home.scss';
 import { Link } from 'react-router-dom';
+
+// import styles scss
+import '../styles/pages/home.scss';
+/**
+ * function Home to render home page.
+ * No params
+ */
 function Home() {
+	// use pokedexStore
 	const pokedexStore = React.useContext(PokedexStore);
 
+	// use useEffect to fetch all pokemon with function fecthListPokemon in pokedexStore
 	useEffect(() => {
 		pokedexStore.fetchListPokemon();
 	}, []);
@@ -16,7 +25,11 @@ function Home() {
 			<div className="container__list">
 				{pokedexStore.pokedex.map((pokemon: any) => {
 					return (
-						<Link to={`/detail/${pokemon.name}`} key={pokemon.num}>
+						// card pokemon
+						<Link
+							to={`/detail/${pokemon.name.toLowerCase()}`}
+							key={pokemon.num}
+						>
 							<CardPokemon
 								name={pokemon.name}
 								img={pokemon.img}
