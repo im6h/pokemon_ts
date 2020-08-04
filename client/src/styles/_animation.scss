@@ -1,10 +1,10 @@
 @mixin zoom-animation {
-	@keyframes zoom {
-		from {
-			transform: translateY(0px);
-		}
-		to {
-			transform: translateY(-8px);
-		}
-	}
+  @keyframes zoom {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-8px);
+    }
+  }
 }

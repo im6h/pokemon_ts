@@ -1,49 +1,49 @@
 @use 'animation';
 .card {
-	display: flex;
-	flex-direction: column;
-	margin: 10px 4px;
-	&__imagePokemon {
-		display: flex;
-		justify-content: center;
-		border: 1px solid #f2f2f2;
-		border-radius: 4px;
-		padding: 4px;
-		background-color: #f2f2f2;
-		cursor: pointer;
-		&:hover {
-			animation-name: zoom;
-			animation-duration: 1s;
-			animation-fill-mode: forwards;
-		}
-		/* animation */
-		@keyframes zoom {
-			from {
-				transform: translateY(0px);
-			}
-			to {
-				transform: translateY(-8px);
-			}
-		}
-	}
-	&__infoPokemon {
-		&-num {
-			text-align: left;
-			font-weight: bold;
-			font-size: 16px;
-			color: #aaaaaa;
-			margin: 2px;
-		}
-		&-name {
-			text-align: left;
-			font-weight: bold;
-			font-size: 20px;
-			margin: 10px 4px;
-		}
-	}
-	&__typePokemon {
-		display: flex;
-		width: 100%;
-		justify-content: flex-start;
-	}
+  display: flex;
+  flex-direction: column;
+  margin: 10px 4px;
+  &__imagePokemon {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    &:hover {
+      animation-name: zoom;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    /* animation */
+    @keyframes zoom {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(-8px);
+      }
+    }
+  }
+  &__infoPokemon {
+    &-num {
+      text-align: left;
+      font-weight: bold;
+      font-size: 16px;
+      color: #aaaaaa;
+      margin: 2px;
+    }
+    &-name {
+      text-align: left;
+      font-weight: bold;
+      font-size: 20px;
+      margin: 10px 4px;
+    }
+  }
+  &__typePokemon {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
