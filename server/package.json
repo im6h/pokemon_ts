@@ -8,16 +8,12 @@
     "dev": "nodemon --exec ts-node ./server.ts",
     "start": "nodemon ./dist/server.js",
     "prod": "npm run build && npm run start",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
-    "isready": "npm run format && npm run lint && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'"
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "npm run prettier",
-      "npm run lint --color",
-      "npm run fix",
+      "npm run format",
       "git add"
     ]
   },
