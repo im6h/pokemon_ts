@@ -1,5 +1,5 @@
 import { Router, Response, Request } from "express";
-
+import * as pokemon from "../../controllers/pokemon";
 const router: Router = Router();
 
 /**
@@ -10,17 +10,11 @@ const router: Router = Router();
  * delete
  */
 router.get("/", (req: Request, res: Response) => {
-  res.send({
-    status: 200,
-    payload: "Hello World",
-  });
+  pokemon.getAllPokemon(req, res);
 });
 
-router.post("/", (req: Request, res: Response) => {
-  res.send({
-    status: 200,
-    payload: "Success",
-  });
+router.post("/create", (req: Request, res: Response) => {
+  pokemon.createPokemon(req, res);
 });
 
 router.put("/", (req: Request, res: Response) => {
