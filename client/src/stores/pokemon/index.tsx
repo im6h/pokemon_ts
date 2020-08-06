@@ -14,7 +14,7 @@ class PokemonStore {
   @action async fetchPokemon(name: string) {
     try {
       let response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${name}/`,
+        `https://pokeapi.co/api/v2/pokemon/${name}/`
       );
       if (response.status === 200 && response.data) {
         this.pokemon = response.data;

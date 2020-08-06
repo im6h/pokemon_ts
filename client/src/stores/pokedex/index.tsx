@@ -16,7 +16,7 @@ class PokedexStore {
   @action async fetchListPokemon() {
     try {
       let response = await axios.get(
-        `https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`,
+        `https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`
       );
 
       // check response status and response data
