@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import Pokemon from "../models/pokemon";
 
-export const getAllPokemon = (req: Request, res: Response) => {
+export const getAllPokemon = async (req: Request, res: Response) => {
   try {
-    const pokemons = Pokemon.find({});
+    const pokemons = await Pokemon.find({});
     if (pokemons.length > 0) {
       res.status(200).json({
         payload: pokemons,

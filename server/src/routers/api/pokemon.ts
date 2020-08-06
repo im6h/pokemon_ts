@@ -9,8 +9,8 @@ const router: Router = Router();
  * pust
  * delete
  */
-router.get("/", (req: Request, res: Response) => {
-  pokemon.getAllPokemon(req, res);
+router.get("/", async (req: Request, res: Response) => {
+  await pokemon.getAllPokemon(req, res);
 });
 
 router.post("/create", (req: Request, res: Response) => {

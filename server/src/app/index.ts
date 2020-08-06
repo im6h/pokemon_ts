@@ -26,5 +26,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
 app.use(cors());
 app.use("/api/v1", router);
-
 export default app;
