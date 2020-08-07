@@ -10,6 +10,7 @@ import router from "../routers";
 const app: express.Application = express();
 const mongoUrl = "mongodb://localhost:27017/pokedex";
 //mongoose.Promise = global.Promise;
+
 // connect mongodb
 mongoose
   .connect(mongoUrl, { useNewUrlParser: true })

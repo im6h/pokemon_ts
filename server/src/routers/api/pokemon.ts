@@ -1,8 +1,12 @@
+// import lib
 import { Router, Response, Request } from "express";
+
+// import controllers
 import * as pokemon from "../../controllers/pokemon";
 const router: Router = Router();
 
 /**
+ * Method
  * TODO: methods of router.
  * get
  * post
@@ -14,22 +18,20 @@ router.get("/", async (req: Request, res: Response) => {
   await pokemon.getAllPokemon(req, res);
 });
 
+router
+  .route("/:id")
+  .get(async (req: Request, res: Response) => {
+    await pokemon.getPokemonById(req, res);
+  })
+  .put(async (req: Request, res: Response) => {
+    await pokemon.editPokemon(req, res);
+  })
+  .delete(async (req: Request, res: Response) => {
+    await pokemon.deletePokemon(req, res);
+  });
+
 router.post("/", async (req: Request, res: Response) => {
   await pokemon.createPokemon(req, res);
 });
-
-//router.put("/", (req: Request, res: Response) => {
-//	res.send({
-//		status: 200,
-//		payload: "Success",
-//	});
-//});
-//
-//router.delete("/", (req: Request, res: Response) => {
-//	res.send({
-//		status: 200,
-//		payload: "Success",
-//	});
-//});
 
 export default router;

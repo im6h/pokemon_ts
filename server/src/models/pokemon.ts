@@ -1,7 +1,10 @@
+// import lib
 import * as mongoose from "mongoose";
 
+// create schema
 const Schema = mongoose.Schema;
 const pokemonSchema = new Schema(
+  // property schema
   {
     num: {
       type: String,
@@ -40,6 +43,9 @@ const pokemonSchema = new Schema(
         img: {
           type: String,
         },
+        types: {
+          type: Array,
+        },
       },
     ],
     prev_evolution: [
@@ -52,6 +58,9 @@ const pokemonSchema = new Schema(
         },
         img: {
           type: String,
+        },
+        types: {
+          type: Array,
         },
       },
     ],
