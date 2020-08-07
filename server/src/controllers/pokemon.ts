@@ -9,7 +9,7 @@ import Pokemon from "../models/pokemon";
 // get all pokemon controllers
 export const getAllPokemon = async (req: Request, res: Response) => {
   try {
-    const pokemons = await Pokemon.find({}).select("-__v");
+    const pokemons = await Pokemon.find({}).select("_id num name img types");
     if (pokemons.length > 0) {
       res.status(200).json({
         payload: pokemons,
@@ -24,17 +24,17 @@ export const getAllPokemon = async (req: Request, res: Response) => {
   }
 };
 
-// get pokemon by id
+// get pokemon by number
 export const getPokemonById = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const pokemon = await Pokemon.findOne({ _id: id });
+    const pokemon = await Pokemon.findOne({ num: id }).select("-__v");
     if (pokemon) {
       res.status(200).json({
         payload: pokemon,
       });
     } else {
-      res.json(404).json({
+      res.status(404).json({
         payload: "Not found",
       });
     }
