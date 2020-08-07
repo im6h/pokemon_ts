@@ -9,7 +9,7 @@ import * as mongoose from "mongoose";
 import router from "../routers";
 const app: express.Application = express();
 const mongoUrl = "mongodb://localhost:27017/pokedex";
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
 // connect mongodb
 mongoose
   .connect(mongoUrl, { useNewUrlParser: true })
@@ -17,6 +17,7 @@ mongoose
     console.log(`✅ Connect database success`);
   })
   .catch((err) => {
+    console.log(err);
     console.log(`Error when connect database`);
   });
 

@@ -9,26 +9,27 @@ const router: Router = Router();
  * pust
  * delete
  */
+
 router.get("/", async (req: Request, res: Response) => {
   await pokemon.getAllPokemon(req, res);
 });
 
-router.post("/create", (req: Request, res: Response) => {
-  pokemon.createPokemon(req, res);
+router.post("/", async (req: Request, res: Response) => {
+  await pokemon.createPokemon(req, res);
 });
 
-router.put("/", (req: Request, res: Response) => {
-  res.send({
-    status: 200,
-    payload: "Success",
-  });
-});
-
-router.delete("/", (req: Request, res: Response) => {
-  res.send({
-    status: 200,
-    payload: "Success",
-  });
-});
+//router.put("/", (req: Request, res: Response) => {
+//	res.send({
+//		status: 200,
+//		payload: "Success",
+//	});
+//});
+//
+//router.delete("/", (req: Request, res: Response) => {
+//	res.send({
+//		status: 200,
+//		payload: "Success",
+//	});
+//});
 
 export default router;

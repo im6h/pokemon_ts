@@ -15,7 +15,7 @@ const pokemonSchema = new Schema(
       type: String,
       required: true,
     },
-    type: {
+    types: {
       type: Array,
     },
     height: {

@@ -17,7 +17,7 @@ export const getAllPokemon = async (req: Request, res: Response) => {
     console.log(err);
   }
 };
-export const getPokemonById = (req: Request, res: Response) => {
+export const getPokemonById = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const pokemon = Pokemon.findOne({ _id: id });
@@ -34,23 +34,17 @@ export const getPokemonById = (req: Request, res: Response) => {
     console.log(err);
   }
 };
-export const createPokemon = (req: Request, res: Response) => {
+export const createPokemon = async (req: Request, res: Response) => {
   try {
     let pokemon = new Pokemon(req.body);
-    console.log(pokemon);
-    pokemon
-      .save()
-      .then((data) => {
-        res.status(201).json({
-          payload: data,
-        });
-      })
-      .catch((e) => {
-        res.status(500).json({
-          payload: "Server error",
-        });
-      });
+    await pokemon.save();
+    res.status(201).json({
+      payload: pokemon,
+    });
   } catch (err) {
     console.log(err);
+    res.status(500).json({
+      payload: "Server error",
+    });
   }
 };
