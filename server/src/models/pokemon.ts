@@ -1,8 +1,7 @@
 // import lib
-import * as mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
 // create schema
-const Schema = mongoose.Schema;
 const pokemonSchema = new Schema(
   // property schema
   {
@@ -11,6 +10,10 @@ const pokemonSchema = new Schema(
       required: true,
     },
     name: {
+      type: String,
+      required: true,
+    },
+    info: {
       type: String,
       required: true,
     },
@@ -32,23 +35,7 @@ const pokemonSchema = new Schema(
     weaknesses: {
       type: Array,
     },
-    next_evolution: [
-      {
-        num: {
-          type: String,
-        },
-        name: {
-          type: String,
-        },
-        img: {
-          type: String,
-        },
-        types: {
-          type: Array,
-        },
-      },
-    ],
-    prev_evolution: [
+    evolution: [
       {
         num: {
           type: String,
@@ -70,5 +57,5 @@ const pokemonSchema = new Schema(
   },
 );
 
-const Pokemon = mongoose.model("pokemon", pokemonSchema);
+const Pokemon = model("pokemon", pokemonSchema);
 export default Pokemon;

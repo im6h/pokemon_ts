@@ -15,7 +15,7 @@ const router: Router = Router();
  */
 
 router.get("/", async (req: Request, res: Response) => {
-  await pokemon.getAllPokemon(req, res);
+  await pokemon.pagingPokemon(req, res);
 });
 
 router
