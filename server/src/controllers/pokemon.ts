@@ -32,7 +32,7 @@ export const getAllPokemon = async (req: Request, res: Response) => {
   }
 };
 
-// paging all pokemon
+// paging all pokemon and sort, limit, offset
 export const pagingPokemon = async (req: Request, res: Response) => {
   try {
     let limit: number = Number(req.query.limit) || 10;
