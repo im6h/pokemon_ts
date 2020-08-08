@@ -43,9 +43,15 @@ export const pagingPokemon = async (req: Request, res: Response) => {
       .limit(limit)
       .skip(offset * limit)
       .sort(sort);
-    res.status(200).json({
-      payload: pokemons,
-    });
+    if (pokemons.length > 0) {
+      res.status(200).json({
+        payload: pokemons,
+      });
+    } else {
+      res.status(200).json({
+        payload: [],
+      });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json({
