@@ -9,8 +9,7 @@ interface Pokemon {
 	weight?: number;
 	img?: string;
 	weaknesses?: Array<string>;
-	next_evolution?: Array<object>;
-	prev_evolution?: Array<object>;
+	evolution?: Array<object>;
 }
 
 class PokemonStore {

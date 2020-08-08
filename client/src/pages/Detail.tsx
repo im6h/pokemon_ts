@@ -54,7 +54,7 @@ function Detail() {
 				</div>
 			</div>
 			<div className="detail-evolution">
-				{pokemon.next_evolution?.map((e) => {
+				{pokemon.evolution?.map((e) => {
 					return <EvolutionPokemon />;
 				})}
 			</div>

@@ -14,9 +14,14 @@ const router: Router = Router();
  * delete
  */
 
-router.get("/", async (req: Request, res: Response) => {
-  await pokemon.getAllPokemon(req, res);
-});
+router
+  .route("/")
+  .get(async (req: Request, res: Response) => {
+    await pokemon.pagingPokemon(req, res);
+  })
+  .post(async (req: Request, res: Response) => {
+    await pokemon.createPokemon(req, res);
+  });
 
 router
   .route("/:id")
@@ -29,9 +34,5 @@ router
   .delete(async (req: Request, res: Response) => {
     await pokemon.deletePokemon(req, res);
   });
-
-router.post("/", async (req: Request, res: Response) => {
-  await pokemon.createPokemon(req, res);
-});
 
 export default router;
