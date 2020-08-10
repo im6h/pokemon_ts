@@ -12,12 +12,12 @@
     background-color: #f2f2f2;
     cursor: pointer;
     &:hover {
-      animation-name: zoom;
+      animation-name: move;
       animation-duration: 1s;
       animation-fill-mode: forwards;
     }
     /* animation */
-    @keyframes zoom {
+    @keyframes move {
       from {
         transform: translateY(0px);
       }

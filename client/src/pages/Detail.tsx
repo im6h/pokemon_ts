@@ -3,6 +3,7 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 import PokemonStore from "../stores/pokemon";
 import TypePokemon from "../components/TypePokemon";
+import InfoPokemon from "../components/InfoPokemon";
 import EvolutionPokemon from "../components/EvolutionPokemon";
 import { Pokemon } from "../interface/pokemon";
 // import scss
@@ -12,7 +13,7 @@ function Detail() {
   const pokemonStore = React.useContext(PokemonStore);
   const { pokemon } = pokemonStore;
   React.useEffect(() => {
-    pokemonStore.fetchPokemon("001");
+    pokemonStore.fetchPokemon("006");
   }, []);
   return (
     <div className="detail">
@@ -36,24 +37,15 @@ function Detail() {
         </p>
       </div>
       <div className="detail-info">
-        <div className="detail-info__image">
-          <img src={pokemon.img} alt={pokemon.name} />
-        </div>
-        <div className="detail-info__array">
-          <div>{pokemon.info}</div>
-          <h2>Types</h2>
-          <div className="detail-info__type">
-            {pokemon.types?.map((type) => {
-              return <TypePokemon type={type} key={type} />;
-            })}
-          </div>
-          <h2>Weaknesses</h2>
-          <div className="detail-info__weak">
-            {pokemon.weaknesses?.map((weakness) => {
-              return <TypePokemon type={weakness} key={weakness} />;
-            })}
-          </div>
-        </div>
+        <InfoPokemon
+          name={pokemon.name}
+          img={pokemon.img}
+          weaknesses={pokemon.weaknesses}
+          types={pokemon.types}
+          height={pokemon.height}
+          weight={pokemon.weight}
+          info={pokemon.info}
+        />
       </div>
       <div className="detail-evolution">
         <h2>Evolution</h2>

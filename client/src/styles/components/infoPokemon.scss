@@ -1,0 +1,51 @@
+.info {
+  display: flex;
+  flex-direction: row;
+  // img block
+  &__img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  // info block
+  &__info {
+    width: 50%;
+  }
+  // height
+  &__height {
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 26px;
+      font-weight: bold;
+    }
+  }
+  // weight
+  &__weight {
+    align-items: center;
+    display: flex;
+    p {
+      font-size: 26px;
+      font-weight: bold;
+    }
+  }
+  // types block
+  &__types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    h3 {
+      width: 100%;
+    }
+  }
+  // weaknesses block
+  &__weaknesses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    h3 {
+      width: 100%;
+    }
+  }
+}

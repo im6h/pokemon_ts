@@ -1,2 +1,49 @@
 .evolution {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // evolution body block
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  // evolution img block
+  &__img {
+    display: flex;
+    border: 4px solid black;
+    border-radius: 50%;
+    img {
+      &:hover {
+        animation: zoom;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+    }
+    @keyframes zoom {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+  }
+  // evolution num block
+  &__num {
+    font-size: 16px;
+    font-weight: bold;
+    color: #aaaaaa;
+  }
+  // evolution name block
+  &__name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  // evolution types block
+  &__types {
+    display: flex;
+    flex-direction: row;
+  }
 }
