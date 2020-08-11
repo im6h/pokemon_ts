@@ -11,6 +11,7 @@ import PokemonStore from "../stores/pokemon";
 import "../styles/pages/home.scss";
 
 /**
+ * TODO:
  * function Home to render home page.
  * No params
  */
@@ -24,7 +25,7 @@ function Home() {
     pokedexStore.fetchListPokemon();
   }, []);
   const passIdPokemon = async (id: string) => {
-    await pokemonStore.fetchPokemon(id);
+    // await pokemonStore.fetchPokemon(id);
   };
 
   return (
@@ -32,12 +33,9 @@ function Home() {
       {/* list pokemon */}
       <div className="container__list">
         {pokedexStore.pokedex.map((pokemon: Pokemon) => {
-          {
-            /* link block pokemon */
-          }
           return (
             <Link
-              to={`/detail/${String(pokemon.name)
+              to={`/detail/${String(pokemon.num)
                 .replace(" ", "")
                 .replace(regex, "-")
                 .toLowerCase()}`}

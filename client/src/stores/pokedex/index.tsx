@@ -12,23 +12,21 @@ class PokedexStore {
   /**
    * function fetchListPokemon: fetch list pokemon to adapter pokedex variable,
    * @param: no param
+   * check response status and response data
+   * if exist data return this.pokedex = data
+   * else return []
    */
   @action async fetchListPokemon() {
     try {
-      let response = await axios.get(
-        `http://localhost:8000/api/v1/pokemons`,
-        // `https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`
-      );
-
-      // check response status and response data
+      let response = await axios.get(`http://localhost:8000/api/v1/pokemons`);
       if (response.status === 200 && response.data) {
-        // this.pokedex = response.data.pokemon;
         this.pokedex = response.data.payload;
       } else {
-        this.pokedex = []; // return array empty if response error
+        this.pokedex = [];
       }
     } catch (error) {
       console.log(error);
+      this.pokedex = [];
     }
   }
 }

@@ -2,21 +2,59 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import PokemonStore from "../stores/pokemon";
-import TypePokemon from "../components/TypePokemon";
 import InfoPokemon from "../components/InfoPokemon";
 import EvolutionPokemon from "../components/EvolutionPokemon";
 import { Pokemon } from "../interface/pokemon";
+import { Link, useLocation } from "react-router-dom";
 // import scss
 import "../styles/pages/detail.scss";
 
 function Detail() {
   const pokemonStore = React.useContext(PokemonStore);
-  const { pokemon } = pokemonStore;
+  const { pokemon, nextPokemon, prevPokemon } = pokemonStore;
+  const { pathname } = useLocation();
   React.useEffect(() => {
-    pokemonStore.fetchPokemon("006");
-  }, []);
+    pokemonStore.fetchPokemon(pathname.split("/")[2]);
+  }, [pathname]);
+  const passIdPokemon = async (id: string) => {
+    await pokemonStore.fetchPokemon(id);
+  };
   return (
     <div className="detail">
+      {/* next and prev pokemon */}
+      <div className="detail-link">
+        <Link
+          to={`/detail/${String(prevPokemon.num)
+            .replace(" ", "")
+            // .replace(regex, "-")
+            .toLowerCase()}`}
+          onClick={() => {
+            passIdPokemon(String(prevPokemon.num));
+          }}
+          style={{
+            display: "flex",
+          }}
+        >
+          <p>#{prevPokemon.num}</p>
+          <p>{prevPokemon.name}</p>
+        </Link>
+        <Link
+          to={`/detail/${String(nextPokemon.num)
+            .replace(" ", "")
+            // .replace(regex, "-")
+            .toLowerCase()}`}
+          onClick={() => {
+            passIdPokemon(String(nextPokemon.num));
+          }}
+          style={{
+            display: "flex",
+          }}
+        >
+          <p>{nextPokemon.name}</p>
+          <p>#{nextPokemon.num}</p>
+        </Link>
+      </div>
+      {/* ---- */}
       {/* block title */}
       <div className="detail-name">
         <p

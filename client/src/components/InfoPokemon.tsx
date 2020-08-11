@@ -60,7 +60,7 @@ function InfoPokemon({
         <div className="info__types">
           <h3>Types</h3>
           {types?.map((type: string) => {
-            return <TypePokemon type={type} />;
+            return <TypePokemon key={type} type={type} />;
           })}
         </div>
         {/* ---- */}
@@ -69,7 +69,7 @@ function InfoPokemon({
         <div className="info__weaknesses">
           <h3>Weaknesses</h3>
           {weaknesses?.map((type: string) => {
-            return <TypePokemon type={type} />;
+            return <TypePokemon key={type} type={type} />;
           })}
         </div>
         {/* ---- */}

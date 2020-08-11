@@ -4,8 +4,17 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  a {
+    text-decoration: none;
+    color: black;
+  }
   p {
     margin: 5px 20px;
+  }
+  &-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   &-name {
     display: flex;
