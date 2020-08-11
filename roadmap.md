@@ -2,9 +2,9 @@
 
 - :white_check_mark: Clone images of pokemons in website
 - Build demo for client:
-  - HomePage: load all pokemon and load more.
-  - TypeComponent: load type pokemon and color pokemon.
-  - CardPokemon: card pokemon.
+  - :white_check_mark: HomePage: load all pokemon and load more.
+  - :white_check_mark: TypeComponent: load type pokemon and color pokemon.
+  - :white_check_mark: CardPokemon: card pokemon.
   - DetailPage: load detail pokemon with an api separate.
 - Detail pokemon api return:
   **_name_**,

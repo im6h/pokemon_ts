@@ -17,6 +17,7 @@ function Detail() {
   }, []);
   return (
     <div className="detail">
+      {/* block title */}
       <div className="detail-name">
         <p
           style={{
@@ -36,6 +37,9 @@ function Detail() {
           #{pokemon.num}
         </p>
       </div>
+      {/* ---- */}
+
+      {/* block info */}
       <div className="detail-info">
         <InfoPokemon
           name={pokemon.name}
@@ -47,6 +51,9 @@ function Detail() {
           info={pokemon.info}
         />
       </div>
+      {/* ---- */}
+
+      {/* block evolution */}
       <div className="detail-evolution">
         <h2>Evolution</h2>
         <div className="detail-evolution__evo">
@@ -64,6 +71,7 @@ function Detail() {
           })}
         </div>
       </div>
+      {/* ---- */}
     </div>
   );
 }

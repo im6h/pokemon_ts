@@ -12,21 +12,29 @@ function EvoluitonPokemon({ name, num, img, types }: Pokemon) {
         <div className="evolution__img">
           <img src={img} alt={name} />
         </div>
+        {/* ---- */}
+
         {/* num evolution pokemon */}
         <div className="evolution__num">
           <p>#{num}</p>
         </div>
+        {/* ---- */}
+
         {/* name evolution pokemon */}
         <div className="evolution__name">
           <p>{name}</p>
         </div>
+        {/* ---- */}
+
         {/* type evolution pokemon use type component */}
         <div className="evolution__types">
           {types?.map((type: string) => {
             return <TypePokemon type={type} />;
           })}
         </div>
+        {/* ---- */}
       </div>
+      {/* ---- */}
     </div>
   );
 }

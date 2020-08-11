@@ -16,14 +16,14 @@ function CardPokemon({ num, name, types, img }: Pokemon) {
       <div className="card__imagePokemon">
         <img src={img} alt={name} loading="lazy" />
       </div>
-      {/* image to display pokemon */}
+      {/* ----  */}
 
       {/* info pokemon */}
       <div className="card__infoPokemon">
         <p className="card__infoPokemon-num">#{num}</p>
         <p className="card__infoPokemon-name">{name}</p>
       </div>
-      {/* display pokemon */}
+      {/* ---- */}
 
       {/* type pokemon */}
       <div className="card__typePokemon">
@@ -31,7 +31,7 @@ function CardPokemon({ num, name, types, img }: Pokemon) {
           return <TypePokemon type={e} key={e} />;
         })}
       </div>
-      {/* display pokemon */}
+      {/* ---- */}
     </div>
   );
 }

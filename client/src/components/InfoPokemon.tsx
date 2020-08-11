@@ -17,6 +17,8 @@ function InfoPokemon({
       <div className="info__img">
         <img src={img} alt={name} />
       </div>
+      {/* ---- */}
+
       {/* info block */}
       <div className="info__info">
         {/* info block */}
@@ -29,6 +31,8 @@ function InfoPokemon({
             color: "white",
           }}
         >
+          {/* --- */}
+
           {/* height, weight */}
           <div className="info__height">
             <h3>Height:</h3>
@@ -38,6 +42,8 @@ function InfoPokemon({
             <h3>Weight:</h3>
             <p>{weight}</p>
           </div>
+          {/* --- */}
+
           {/* info */}
           <p
             style={{
@@ -46,7 +52,10 @@ function InfoPokemon({
           >
             {info}
           </p>
+          {/* ----- */}
         </div>
+        {/* ---- */}
+
         {/* types block */}
         <div className="info__types">
           <h3>Types</h3>
@@ -54,6 +63,8 @@ function InfoPokemon({
             return <TypePokemon type={type} />;
           })}
         </div>
+        {/* ---- */}
+
         {/* weaknesses block */}
         <div className="info__weaknesses">
           <h3>Weaknesses</h3>
@@ -61,7 +72,9 @@ function InfoPokemon({
             return <TypePokemon type={type} />;
           })}
         </div>
+        {/* ---- */}
       </div>
+      {/* ---- */}
     </div>
   );
 }

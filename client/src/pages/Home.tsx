@@ -29,10 +29,13 @@ function Home() {
 
   return (
     <div className="container">
+      {/* list pokemon */}
       <div className="container__list">
         {pokedexStore.pokedex.map((pokemon: Pokemon) => {
+          {
+            /* link block pokemon */
+          }
           return (
-            // card pokemon
             <Link
               to={`/detail/${String(pokemon.name)
                 .replace(" ", "")
@@ -43,16 +46,19 @@ function Home() {
               }}
               key={pokemon.num}
             >
+              {/* card block pokemon */}
               <CardPokemon
                 name={pokemon.name}
                 img={pokemon.img}
                 num={pokemon.num}
                 types={pokemon.types}
               />
+              {/* ---- */}
             </Link>
           );
         })}
       </div>
+      {/* ---- */}
     </div>
   );
 }

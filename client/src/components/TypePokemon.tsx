@@ -18,9 +18,11 @@ interface Props {
 function TypePokemon({ type }: Props) {
   return (
     <div className="typePokemon">
+      {/* block type pokemon */}
       <div className={`typePokemon__type-${type.toLowerCase()}`}>
         <span>{type}</span>
       </div>
+      {/* ---- */}
     </div>
   );
 }
