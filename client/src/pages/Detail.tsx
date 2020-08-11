@@ -4,6 +4,8 @@ import { observer } from "mobx-react-lite";
 import PokemonStore from "../stores/pokemon";
 import InfoPokemon from "../components/InfoPokemon";
 import EvolutionPokemon from "../components/EvolutionPokemon";
+import { ArrowForwardIos, ArrowBackIos } from "@material-ui/icons";
+import { formatNumber } from "../utils/format";
 import { Pokemon } from "../interface/pokemon";
 import { Link, useLocation } from "react-router-dom";
 // import scss
@@ -24,7 +26,7 @@ function Detail() {
       {/* next and prev pokemon */}
       <div className="detail-link">
         <Link
-          to={`/detail/${String(prevPokemon.num)
+          to={`/detail/${String(formatNumber(Number(prevPokemon.num)))
             .replace(" ", "")
             // .replace(regex, "-")
             .toLowerCase()}`}
@@ -33,13 +35,15 @@ function Detail() {
           }}
           style={{
             display: "flex",
+            justifyContent: "center",
           }}
         >
-          <p>#{prevPokemon.num}</p>
+          <ArrowBackIos />
+          <p>#{formatNumber(Number(prevPokemon.num))}</p>
           <p>{prevPokemon.name}</p>
         </Link>
         <Link
-          to={`/detail/${String(nextPokemon.num)
+          to={`/detail/${String(formatNumber(Number(nextPokemon.num)))
             .replace(" ", "")
             // .replace(regex, "-")
             .toLowerCase()}`}
@@ -48,10 +52,12 @@ function Detail() {
           }}
           style={{
             display: "flex",
+            justifyContent: "center",
           }}
         >
           <p>{nextPokemon.name}</p>
-          <p>#{nextPokemon.num}</p>
+          <p>#{formatNumber(Number(nextPokemon.num))}</p>
+          <ArrowForwardIos />
         </Link>
       </div>
       {/* ---- */}
@@ -72,7 +78,7 @@ function Detail() {
             fontWeight: "bold",
           }}
         >
-          #{pokemon.num}
+          #{formatNumber(Number(pokemon.num))}
         </p>
       </div>
       {/* ---- */}

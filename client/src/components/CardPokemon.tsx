@@ -2,6 +2,7 @@
 import React from "react";
 import TypePokemon from "../components/TypePokemon";
 import { Pokemon } from "../interface/pokemon";
+import { formatNumber } from "../utils/format";
 // import style
 import "../styles/components/cardPokemon.scss";
 
@@ -20,7 +21,7 @@ function CardPokemon({ num, name, types, img }: Pokemon) {
 
       {/* info pokemon */}
       <div className="card__infoPokemon">
-        <p className="card__infoPokemon-num">#{num}</p>
+        <p className="card__infoPokemon-num">#{formatNumber(Number(num))}</p>
         <p className="card__infoPokemon-name">{name}</p>
       </div>
       {/* ---- */}

@@ -42,7 +42,7 @@ import Pokemon from "../models/pokemon";
  */
 export const pagingPokemon = async (req: Request, res: Response) => {
   try {
-    let limit: number = Number(req.query.limit) || 10;
+    let limit: number = Number(req.query.limit) || 12;
     let offset: number = Number(req.query.offset) || 0;
     let sort = req.query.sortBy || "num";
     const pokemons = await Pokemon.find({})
@@ -82,17 +82,15 @@ export const getPokemonById = async (req: Request, res: Response) => {
 
     const nextPokemon =
       Number(id) === totalDocument
-        ? await Pokemon.findOne({ num: "001" }).select("num name -_id")
-        : await Pokemon.findOne({ num: `00${Number(id) + 1}` }).select(
+        ? await Pokemon.findOne({ num: 1 }).select("num name -_id")
+        : await Pokemon.findOne({ num: Number(id) + 1 }).select(
             "num name -_id",
           );
 
     const prevPokemon =
       Number(id) - 1 === 0
-        ? await Pokemon.findOne({ num: `00${Number(totalDocument)}` }).select(
-            "num name -_id",
-          )
-        : await Pokemon.findOne({ num: `00${Number(id) - 1}` }).select(
+        ? await Pokemon.findOne({ num: totalDocument }).select("num name -_id")
+        : await Pokemon.findOne({ num: Number(id) - 1 }).select(
             "num name -_id",
           );
     if (pokemon) {
@@ -139,7 +137,7 @@ export const createPokemon = async (req: Request, res: Response) => {
 };
 
 /**
- * TODO:
+ * TODO: editPokemon
  * get id from req.params
  * check pokemon exist with id
  * if not exist => log not found
@@ -174,7 +172,7 @@ export const editPokemon = async (req: Request, res: Response) => {
 };
 
 /**
- * TODO:
+ * TODO: deletePokemon
  * get id from request
  * check pokemon exist with id
  * if not exist => log not found pokemon

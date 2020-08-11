@@ -2,12 +2,13 @@ import React from "react";
 import TypePokemon from "./TypePokemon";
 import { Pokemon } from "../interface/pokemon";
 import { Link } from "react-router-dom";
+import { formatNumber } from "../utils/format";
 import "../styles/components/evolutionPokemon.scss";
 
 function EvoluitonPokemon({ name, num, img, types }: Pokemon) {
   return (
     <Link
-      to={`/detail/${String(num)
+      to={`/detail/${String(formatNumber(Number(num)))
         .replace(" ", "")
         // .replace(regex, "-")
         .toLowerCase()}`}
@@ -23,7 +24,7 @@ function EvoluitonPokemon({ name, num, img, types }: Pokemon) {
 
           {/* num evolution pokemon */}
           <div className="evolution__num">
-            <p>#{num}</p>
+            <p>#{formatNumber(Number(num))}</p>
           </div>
           {/* ---- */}
 

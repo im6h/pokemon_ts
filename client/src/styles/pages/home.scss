@@ -11,4 +11,22 @@
     color: inherit;
     cursor: default;
   }
+  &__load {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      border-radius: 4px;
+      border: 1px solid #1b82b1;
+      background-color: transparent;
+      padding: 10px;
+      margin: 4px;
+      color: black;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }

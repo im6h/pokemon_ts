@@ -16,11 +16,13 @@ class PokedexStore {
    * if exist data return this.pokedex = data
    * else return []
    */
-  @action async fetchListPokemon() {
+  @action async fetchListPokemon(offset: number) {
     try {
-      let response = await axios.get(`http://localhost:8000/api/v1/pokemons`);
+      let response = await axios.get(
+        `http://localhost:8000/api/v1/pokemons?limit=10&offset=${offset}`,
+      );
       if (response.status === 200 && response.data) {
-        this.pokedex = response.data.payload;
+        this.pokedex = [...this.pokedex, ...response.data.payload];
       } else {
         this.pokedex = [];
       }

@@ -4,8 +4,8 @@ import { observer } from "mobx-react-lite";
 import PokedexStore from "../stores/pokedex";
 import CardPokemon from "../components/CardPokemon";
 import { Pokemon } from "../interface/pokemon";
+import { formatNumber } from "../utils/format";
 import { Link } from "react-router-dom";
-import PokemonStore from "../stores/pokemon";
 
 // import styles scss
 import "../styles/pages/home.scss";
@@ -18,16 +18,16 @@ import "../styles/pages/home.scss";
 function Home() {
   // use pokedexStore
   const pokedexStore = React.useContext(PokedexStore);
-  const pokemonStore = React.useContext(PokemonStore);
   const regex: RegExp = /\W/;
+  const [offset, setOffset] = React.useState(0);
+
   // use useEffect to fetch all pokemon with function fecthListPokemon in pokedexStore
   React.useEffect(() => {
-    pokedexStore.fetchListPokemon();
-  }, []);
+    pokedexStore.fetchListPokemon(offset);
+  }, [offset]);
   const passIdPokemon = async (id: string) => {
     // await pokemonStore.fetchPokemon(id);
   };
-
   return (
     <div className="container">
       {/* list pokemon */}
@@ -35,7 +35,7 @@ function Home() {
         {pokedexStore.pokedex.map((pokemon: Pokemon) => {
           return (
             <Link
-              to={`/detail/${String(pokemon.num)
+              to={`/detail/${String(formatNumber(Number(pokemon.num)))
                 .replace(" ", "")
                 .replace(regex, "-")
                 .toLowerCase()}`}
@@ -57,6 +57,15 @@ function Home() {
         })}
       </div>
       {/* ---- */}
+      <div className="container__load">
+        <button
+          onClick={() => {
+            setOffset(offset + 1);
+          }}
+        >
+          Load more
+        </button>
+      </div>
     </div>
   );
 }

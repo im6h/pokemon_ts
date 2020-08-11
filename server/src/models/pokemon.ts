@@ -6,7 +6,7 @@ const pokemonSchema = new Schema(
   // property schema
   {
     num: {
-      type: String,
+      type: Number,
       required: true,
     },
     name: {
@@ -38,7 +38,7 @@ const pokemonSchema = new Schema(
     evolution: [
       {
         num: {
-          type: String,
+          type: Number,
         },
         name: {
           type: String,
