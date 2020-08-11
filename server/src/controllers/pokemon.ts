@@ -77,10 +77,31 @@ export const pagingPokemon = async (req: Request, res: Response) => {
 export const getPokemonById = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
+    const totalDocument = await Pokemon.countDocuments();
     const pokemon = await Pokemon.findOne({ num: id }).select("-__v");
+
+    const nextPokemon =
+      Number(id) === totalDocument
+        ? await Pokemon.findOne({ num: "001" }).select("num name -_id")
+        : await Pokemon.findOne({ num: `00${Number(id) + 1}` }).select(
+            "num name -_id",
+          );
+
+    const prevPokemon =
+      Number(id) - 1 === 0
+        ? await Pokemon.findOne({ num: `00${Number(totalDocument)}` }).select(
+            "num name -_id",
+          )
+        : await Pokemon.findOne({ num: `00${Number(id) - 1}` }).select(
+            "num name -_id",
+          );
     if (pokemon) {
       res.status(200).json({
-        payload: pokemon,
+        payload: {
+          pokemon: pokemon,
+          next_pokemon: nextPokemon,
+          prev_pokemon: prevPokemon,
+        },
       });
     } else {
       res.status(404).json({
