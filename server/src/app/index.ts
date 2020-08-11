@@ -9,9 +9,11 @@ import * as mongoose from "mongoose";
 import router from "../routers";
 const app: express.Application = express();
 const mongoUrl = "mongodb://localhost:27017/pokedex";
+
 //mongoose.Promise = global.Promise;
 //const uri =
 //	"mongodb+srv://dangvu:haidang1807^^@cluster0-6rrys.azure.mongodb.net/<dbname>?retryWrites=true&w=majority";
+
 // connect mongodb
 mongoose
   .connect(mongoUrl, { useNewUrlParser: true })
@@ -23,10 +25,11 @@ mongoose
     console.log(`Error when connect database`);
   });
 
-// TODO: use cors, morgan
+// use cors, morgan
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
 app.use(cors());
 app.use("/api/v1", router);
+
 export default app;

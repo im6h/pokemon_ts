@@ -12,27 +12,34 @@ import Pokemon from "../models/pokemon";
 /**
  * TODO:
  */
-export const getAllPokemon = async (req: Request, res: Response) => {
-  try {
-    const pokemons = await Pokemon.find({}).select("_id num name img types");
-    if (pokemons.length > 0) {
-      res.status(200).json({
-        payload: pokemons,
-      });
-    } else {
-      res.status(200).json({
-        payload: "No pokemon",
-      });
-    }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({
-      payload: "Server internal error",
-    });
-  }
-};
+//export const getAllPokemon = async (req: Request, res: Response) => {
+//  try {
+//    const pokemons = await Pokemon.find({}).select("_id num name img types");
+//    if (pokemons.length > 0) {
+//      res.status(200).json({
+//        payload: pokemons,
+//      });
+//    } else {
+//      res.status(200).json({
+//        payload: "No pokemon",
+//      });
+//    }
+//  } catch (err) {
+//    console.log(err);
+//    res.status(500).json({
+//      payload: "Server internal error",
+//    });
+//  }
+//};
 
-// paging all pokemon and sort, limit, offset
+/**
+ * TODO:
+ * get limit, offset, sort from request
+ * find all pokemons with limit, offset and request
+ * check pokemons length
+ * if length > 0 return pokemons
+ * else return []
+ */
 export const pagingPokemon = async (req: Request, res: Response) => {
   try {
     let limit: number = Number(req.query.limit) || 10;
@@ -60,7 +67,13 @@ export const pagingPokemon = async (req: Request, res: Response) => {
   }
 };
 
-// get pokemon by number
+/**
+ * TODO:
+ * get id from request
+ * find pokemon with id
+ * if pokemon not exist => log not found and return {}
+ * else return pokemon.
+ */
 export const getPokemonById = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
@@ -82,7 +95,13 @@ export const getPokemonById = async (req: Request, res: Response) => {
   }
 };
 
-// create new pokemon
+/**
+ * TODO:
+ * create new model pokemon
+ * check pokemon exist
+ * if not exist => create pokemon
+ * exist => log error
+ */
 export const createPokemon = async (req: Request, res: Response) => {
   try {
     let pokemon = new Pokemon(req.body);
@@ -98,11 +117,17 @@ export const createPokemon = async (req: Request, res: Response) => {
   }
 };
 
-// edit info pokemon
+/**
+ * TODO:
+ * get id from req.params
+ * check pokemon exist with id
+ * if not exist => log not found
+ * exist => edit pokemon with req.body
+ */
 export const editPokemon = async (req: Request, res: Response) => {
   try {
-    let id = req.params.id;
-    let body = req.body;
+    let { id } = req.params;
+    let { body } = req.body;
     let pokemon = await Pokemon.findOne({ num: id }).select("-__v");
     if (pokemon) {
       await Promise.all(
@@ -127,7 +152,13 @@ export const editPokemon = async (req: Request, res: Response) => {
   }
 };
 
-// delete info pokemon
+/**
+ * TODO:
+ * get id from request
+ * check pokemon exist with id
+ * if not exist => log not found pokemon
+ * exist => delete pokemon.
+ */
 export const deletePokemon = async (req: Request, res: Response) => {
   try {
     let id = req.params.id;
