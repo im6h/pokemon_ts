@@ -16,98 +16,82 @@
   }
   &__type {
     &-grass {
-      background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
-      background-color: #9bcc50;
+      background: #9bcc50 linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
       color: #212121;
       @include type-decorate;
     }
     &-poison {
-      background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
-      background-color: #b97fc9;
+      background: #b97fc9 linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
       color: #fff;
       @include type-decorate;
     }
     &-fire {
-      background: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
-      background-color: #fd7d24;
+      background: #fd7d24 linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
       color: #fff;
       @include type-decorate;
     }
     &-flying {
-      background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
-      background-color: #3dc7ef;
+      background: #3dc7ef linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
       color: #212121;
       @include type-decorate;
     }
     &-water {
-      background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
-      background-color: #4592c4;
+      background: #4592c4 linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
       color: #fff;
       @include type-decorate;
     }
     &-normal {
-      background: linear-gradient(180deg, #a4acaf 50%, #a4acaf 50%);
-      background-color: #a4acaf;
+      background: #a4acaf linear-gradient(180deg, #a4acaf 50%, #a4acaf 50%);
       color: #212121;
       @include type-decorate;
     }
     &-bug {
-      background: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
-      background-color: #729f3f;
+      background: #729f3f linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
       color: #fff;
       @include type-decorate;
     }
     &-electric {
-      background: linear-gradient(180deg, #eed535 50%, #eed535 50%);
-      background-color: #eed535;
+      background: #eed535 linear-gradient(180deg, #eed535 50%, #eed535 50%);
       color: #212121;
       @include type-decorate;
     }
     &-ground {
-      background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
-      background-color: #f7de3f;
+      background: #f7de3f linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
       color: #212121;
       @include type-decorate;
     }
     &-fairy {
-      background: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
-      background-color: #fdb9e9;
+      background: #fdb9e9 linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
       color: #212121;
       @include type-decorate;
     }
     &-fighting {
-      background: linear-gradient(180deg, #d56723 50%, #d56723 50%);
-      background-color: #d56723;
+      background: #d56723 linear-gradient(180deg, #d56723 50%, #d56723 50%);
       color: #fff;
       @include type-decorate;
     }
     &-psychic {
-      background: linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
-      background-color: #f366b9;
+      background: #f366b9 linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
       color: #fff;
       @include type-decorate;
     }
     &-rock {
-      background: linear-gradient(180deg, #a38c21 50%, #a38c21 50%);
-      background-color: #a38c21;
+      background: #a38c21 linear-gradient(180deg, #a38c21 50%, #a38c21 50%);
       color: #fff;
       @include type-decorate;
     }
     &-ice {
-      background: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
-      background-color: #51c4e7;
+      background: #51c4e7 linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
       color: #212121;
       @include type-decorate;
     }
     &-ghost {
-      background: linear-gradient(180deg, #7b62a3 50%, #7b62a3 50%);
-      background-color: #7b62a3;
+      background: #7b62a3 linear-gradient(180deg, #7b62a3 50%, #7b62a3 50%);
       color: #fff;
       @include type-decorate;
     }
     &-dragon {
-      background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
-      background-color: #53a4cf;
+      background: #53a4cf linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
       color: #fff;
       @include type-decorate;
     }

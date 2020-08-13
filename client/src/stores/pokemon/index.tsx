@@ -7,6 +7,7 @@ class PokemonStore {
   @observable pokemon: Pokemon = {};
   @observable nextPokemon: Pokemon = {};
   @observable prevPokemon: Pokemon = {};
+
   /**
    * TODO:
    * get data api with params id
@@ -14,6 +15,7 @@ class PokemonStore {
    * if exist response.data => this.pokemon = data
    * else this.pokemon = {}
    */
+
   @action async fetchPokemon(id: string) {
     try {
       let response = await axios.get(

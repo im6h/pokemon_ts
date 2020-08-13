@@ -5,7 +5,7 @@ import React from "react";
 import "../styles/components/typePokemon.scss";
 
 /**
- * interface Props to recive prop from parent
+ * interface Props to receive prop from parent
  */
 interface Props {
   type: string;

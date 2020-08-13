@@ -8,15 +8,15 @@ import * as mongoose from "mongoose";
 // import router
 import router from "../routers";
 const app: express.Application = express();
-const mongoUrl = "mongodb://localhost:27017/pokedex";
+// const mongoUrl = "mongodb://localhost:27017/pokedex";
 
 //mongoose.Promise = global.Promise;
-//const uri =
-//	"mongodb+srv://dangvu:haidang1807^^@cluster0-6rrys.azure.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri =
+  "mongodb+srv://dangvu:haidang1807^^@cluster0-6rrys.azure.mongodb.net/pokedex?retryWrites=true&w=majority";
 
 // connect mongodb
 mongoose
-  .connect(mongoUrl, { useNewUrlParser: true })
+  .connect(uri, { useNewUrlParser: true })
   .then(() => {
     console.log(`✅ Connect database success`);
   })

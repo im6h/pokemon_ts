@@ -16,6 +16,7 @@ class PokedexStore {
    * if exist data return this.pokedex = data
    * else return []
    */
+
   @action async fetchListPokemon(offset: number) {
     try {
       let response = await axios.get(
