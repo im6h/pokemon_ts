@@ -13,15 +13,15 @@ import "../styles/pages/home.scss";
 /**
  * TODO:
  * function Home to render home page.
- * No params
+ * No params.
+ * fetch ListPokemon when render view.
  */
 function Home() {
+  // const regex: RegExp = /\W/;
   // use pokedexStore
   const pokedexStore = React.useContext(PokedexStore);
-  const regex: RegExp = /\W/;
   const [offset, setOffset] = React.useState(0);
 
-  // use useEffect to fetch all pokemon with function fecthListPokemon in pokedexStore
   React.useEffect(() => {
     pokedexStore.fetchListPokemon(offset);
   }, [offset]);
@@ -35,10 +35,10 @@ function Home() {
         {pokedexStore.pokedex.map((pokemon: Pokemon) => {
           return (
             <Link
-              to={`/detail/${String(formatNumber(Number(pokemon.num)))
-                .replace(" ", "")
-                .replace(regex, "-")
-                .toLowerCase()}`}
+              to={`/detail/${String(formatNumber(Number(pokemon.num)))}`}
+              // .replace(" ", "")
+              // .replace(regex, "-")
+              // .toLowerCase()}`}
               onClick={() => {
                 passIdPokemon(String(pokemon.num));
               }}

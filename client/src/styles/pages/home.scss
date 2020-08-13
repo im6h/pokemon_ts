@@ -1,6 +1,8 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+
+  // block list
   &__list {
     width: 100%;
     display: grid;
@@ -11,6 +13,8 @@
     color: inherit;
     cursor: default;
   }
+
+  // block load
   &__load {
     margin-top: 2rem;
     width: 100%;

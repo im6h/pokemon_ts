@@ -12,8 +12,9 @@ interface Props {
 }
 
 /**
+ * TODO:
  * function TypePokemon to render type pokemon.
- * @param Props
+ * @param type
  */
 function TypePokemon({ type }: Props) {
   return (

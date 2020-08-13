@@ -11,11 +11,15 @@
   p {
     margin: 5px 20px;
   }
+
+  // block link
   &-link {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
+
+  // block name
   &-name {
     display: flex;
     flex-direction: row;
@@ -23,6 +27,8 @@
     justify-content: center;
     align-items: center;
   }
+
+  // block info
   &-info {
     width: 100%;
     display: flex;
@@ -38,11 +44,15 @@
         // width: 150%;
       }
     }
+
+    // block array
     &__array {
       width: 50%;
       display: flex;
       flex-direction: column;
     }
+
+    // block type
     &__type {
       display: flex;
       flex-direction: row;
@@ -50,6 +60,8 @@
       justify-content: flex-start;
       align-items: center;
     }
+
+    // block weak
     &__weak {
       display: flex;
       flex-direction: row;
@@ -58,6 +70,8 @@
       align-items: center;
     }
   }
+
+  // block evolution
   &-evolution {
     margin-top: 10px;
     padding: 10px;

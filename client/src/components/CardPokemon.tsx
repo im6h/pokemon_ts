@@ -3,6 +3,7 @@ import React from "react";
 import TypePokemon from "../components/TypePokemon";
 import { Pokemon } from "../interface/pokemon";
 import { formatNumber } from "../utils/format";
+
 // import style
 import "../styles/components/cardPokemon.scss";
 

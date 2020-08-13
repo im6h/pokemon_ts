@@ -15,6 +15,7 @@ function Detail() {
   const pokemonStore = React.useContext(PokemonStore);
   const { pokemon, nextPokemon, prevPokemon } = pokemonStore;
   const { pathname } = useLocation();
+
   React.useEffect(() => {
     pokemonStore.fetchPokemon(pathname.split("/")[2]);
   }, [pathname]);

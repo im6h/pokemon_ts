@@ -1,10 +1,20 @@
+// import lib
 import React from "react";
 import TypePokemon from "./TypePokemon";
 import { Pokemon } from "../interface/pokemon";
 import { Link } from "react-router-dom";
 import { formatNumber } from "../utils/format";
+
+// import scss
 import "../styles/components/evolutionPokemon.scss";
 
+/**
+ * TODO:
+ * @param name
+ * @param num
+ * @param img
+ * @param types
+ */
 function EvoluitonPokemon({ name, num, img, types }: Pokemon) {
   return (
     <Link

@@ -1,7 +1,22 @@
+// import lib
 import React from "react";
 import TypePokemon from "./TypePokemon";
 import { Pokemon } from "../interface/pokemon";
+
+// import style scss
 import "../styles/components/infoPokemon.scss";
+
+/**
+ *TODO:
+ * @param img
+ * @param name
+ * @param info
+ * @param height
+ * @param weight
+ * @param types
+ * @param weaknesses
+ */
+
 function InfoPokemon({
   img,
   name,
@@ -31,8 +46,6 @@ function InfoPokemon({
             color: "white",
           }}
         >
-          {/* --- */}
-
           {/* height, weight */}
           <div className="info__height">
             <h3>Height:</h3>

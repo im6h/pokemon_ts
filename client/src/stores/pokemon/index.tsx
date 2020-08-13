@@ -1,7 +1,9 @@
+// import lib
 import axios from "axios";
 import { action, observable } from "mobx";
 import { createContext } from "react";
 import { Pokemon } from "../../interface/pokemon";
+import { BASE_URL } from "../../services";
 
 class PokemonStore {
   @observable pokemon: Pokemon = {};
@@ -18,9 +20,7 @@ class PokemonStore {
 
   @action async fetchPokemon(id: string) {
     try {
-      let response = await axios.get(
-        `http://localhost:8000/api/v1/pokemons/${id}`,
-      );
+      let response = await axios.get(`${BASE_URL}/pokemons/${id}`);
       if (response.status === 200 && response.data) {
         this.pokemon = response.data.payload.pokemon;
         this.prevPokemon = response.data.payload.prev_pokemon;

@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   margin: 10px 4px;
+
+  // block img
   &__imagePokemon {
     display: flex;
     justify-content: center;
@@ -25,6 +27,8 @@
       }
     }
   }
+
+  // block info pokemon
   &__infoPokemon {
     &-num {
       text-align: left;
@@ -40,6 +44,8 @@
       margin: 10px 4px;
     }
   }
+
+  // block type pokemon
   &__typePokemon {
     display: flex;
     width: 100%;
