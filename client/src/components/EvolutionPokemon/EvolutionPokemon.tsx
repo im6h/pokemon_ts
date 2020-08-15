@@ -1,12 +1,12 @@
 // import lib
 import React from "react";
-import TypePokemon from "./TypePokemon";
-import { Pokemon } from "../interface/pokemon";
+import TypePokemon from "../TypePokemon/TypePokemon";
+import { Pokemon } from "../../interface/pokemon";
 import { Link } from "react-router-dom";
-import { formatNumber } from "../utils/format";
+import { formatNumber } from "../../utils/format";
 
 // import scss
-import "../styles/components/evolutionPokemon.scss";
+import "./evolutionPokemon.scss";
 
 /**
  * TODO:

@@ -1,36 +1,7 @@
 // import lib
 import { Request, Response } from "express";
 import Pokemon from "../models/pokemon";
-
-/**
- * TODO: all method for controllor pokemon
- * with get all pokemon,paging: 20 pokemon/ 1 page
- * get pokemon sort by number
- * get pokemon sort by name
- */
-
-/**
- * TODO:
- */
-//export const getAllPokemon = async (req: Request, res: Response) => {
-//  try {
-//    const pokemons = await Pokemon.find({}).select("_id num name img types");
-//    if (pokemons.length > 0) {
-//      res.status(200).json({
-//        payload: pokemons,
-//      });
-//    } else {
-//      res.status(200).json({
-//        payload: "No pokemon",
-//      });
-//    }
-//  } catch (err) {
-//    console.log(err);
-//    res.status(500).json({
-//      payload: "Server internal error",
-//    });
-//  }
-//};
+import { HttpStatus } from "../utils/HttpStatus";
 
 /**
  * TODO:
@@ -51,18 +22,16 @@ export const pagingPokemon = async (req: Request, res: Response) => {
       .skip(offset * limit)
       .sort(sort);
     if (pokemons.length > 0) {
-      res.status(200).json({
+      res.status(HttpStatus.OK).json({
         payload: pokemons,
       });
     } else {
-      res.status(200).json({
-        payload: [],
-      });
+      res.status(HttpStatus.NO_CONTENT).end();
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json({
-      payload: "Server internal error",
+    res.status(HttpStatus.SERVER_ERROR).json({
+      error: err,
     });
   }
 };
@@ -94,7 +63,7 @@ export const getPokemonById = async (req: Request, res: Response) => {
             "num name -_id",
           );
     if (pokemon) {
-      res.status(200).json({
+      res.status(HttpStatus.OK).json({
         payload: {
           pokemon: pokemon,
           next_pokemon: nextPokemon,
@@ -102,14 +71,12 @@ export const getPokemonById = async (req: Request, res: Response) => {
         },
       });
     } else {
-      res.status(404).json({
-        payload: "Not found",
-      });
+      res.status(HttpStatus.NOT_FOUND).end();
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json({
-      payload: "Server internal error",
+    res.status(HttpStatus.SERVER_ERROR).json({
+      error: err,
     });
   }
 };
@@ -125,13 +92,11 @@ export const createPokemon = async (req: Request, res: Response) => {
   try {
     let pokemon = new Pokemon(req.body);
     await pokemon.save();
-    res.status(201).json({
-      payload: pokemon,
-    });
+    res.status(HttpStatus.CREATED).end();
   } catch (err) {
     console.log(err);
-    res.status(500).json({
-      payload: "Server internal error",
+    res.status(HttpStatus.SERVER_ERROR).json({
+      error: err,
     });
   }
 };
@@ -155,18 +120,14 @@ export const editPokemon = async (req: Request, res: Response) => {
         }),
       );
       await pokemon.save();
-      res.status(201).json({
-        payload: pokemon,
-      });
+      res.status(HttpStatus.NO_CONTENT).end();
     } else {
-      res.status(404).json({
-        payload: "Not found pokemon",
-      });
+      res.status(HttpStatus.NOT_FOUND).end();
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json({
-      payload: "Server internal error",
+    res.status(HttpStatus.SERVER_ERROR).json({
+      error: err,
     });
   }
 };
@@ -184,18 +145,14 @@ export const deletePokemon = async (req: Request, res: Response) => {
     let pokemon = await Pokemon.findOne({ _id: id }).select("-__v");
     if (pokemon) {
       await pokemon.remove();
-      res.status(200).json({
-        payload: "Delete success",
-      });
+      res.status(HttpStatus.NO_CONTENT).end();
     } else {
-      res.status(404).json({
-        payload: "Not found pokemon",
-      });
+      res.status(HttpStatus.NOT_FOUND).end();
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json({
-      payload: "Server internal error",
+    res.status(HttpStatus.SERVER_ERROR).json({
+      error: err,
     });
   }
 };

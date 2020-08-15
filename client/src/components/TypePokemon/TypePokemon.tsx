@@ -2,7 +2,7 @@
 import React from "react";
 
 // import styles scss
-import "../styles/components/typePokemon.scss";
+import "./typePokemon.scss";
 
 /**
  * interface Props to receive prop from parent

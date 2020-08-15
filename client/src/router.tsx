@@ -1,8 +1,8 @@
 // import lib, component
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React from "react";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
+import Home from "./pages/Home/Home";
+import Detail from "./pages/Detail/Detail";
 import "mobx-react-lite/batchingForReactDom";
 
 /**

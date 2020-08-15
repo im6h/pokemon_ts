@@ -1,10 +1,10 @@
 // import lib
 import React from "react";
-import TypePokemon from "./TypePokemon";
-import { Pokemon } from "../interface/pokemon";
+import TypePokemon from "../TypePokemon/TypePokemon";
+import { Pokemon } from "../../interface/pokemon";
 
 // import style scss
-import "../styles/components/infoPokemon.scss";
+import "./infoPokemon.scss";
 
 /**
  *TODO:

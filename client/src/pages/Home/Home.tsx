@@ -1,14 +1,14 @@
 // import lib, component
 import React from "react";
 import { observer } from "mobx-react-lite";
-import PokedexStore from "../stores/pokedex";
-import CardPokemon from "../components/CardPokemon";
-import { Pokemon } from "../interface/pokemon";
-import { formatNumber } from "../utils/format";
+import PokedexStore from "../../stores/pokedex";
+import CardPokemon from "../../components/CardPokemon/CardPokemon";
+import { Pokemon } from "../../interface/pokemon";
+import { formatNumber } from "../../utils/format";
 import { Link } from "react-router-dom";
 
 // import styles scss
-import "../styles/pages/home.scss";
+import "./home.scss";
 
 /**
  * TODO:

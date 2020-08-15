@@ -10,7 +10,7 @@ const router: Router = Router();
  * TODO: methods of router.
  * get
  * post
- * pust
+ * put
  * delete
  */
 

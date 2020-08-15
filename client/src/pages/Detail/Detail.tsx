@@ -1,15 +1,15 @@
 // import lib, component
 import React from "react";
 import { observer } from "mobx-react-lite";
-import PokemonStore from "../stores/pokemon";
-import InfoPokemon from "../components/InfoPokemon";
-import EvolutionPokemon from "../components/EvolutionPokemon";
+import PokemonStore from "../../stores/pokemon";
+import InfoPokemon from "../../components/InfoPokemon/InfoPokemon";
+import EvolutionPokemon from "../../components/EvolutionPokemon/EvolutionPokemon";
 import { ArrowForwardIos, ArrowBackIos } from "@material-ui/icons";
-import { formatNumber } from "../utils/format";
-import { Pokemon } from "../interface/pokemon";
+import { formatNumber } from "../../utils/format";
+import { Pokemon } from "../../interface/pokemon";
 import { Link, useLocation } from "react-router-dom";
 // import scss
-import "../styles/pages/detail.scss";
+import "./detail.scss";
 
 function Detail() {
   const pokemonStore = React.useContext(PokemonStore);

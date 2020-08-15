@@ -1,11 +1,11 @@
 // import lib, components
 import React from "react";
-import TypePokemon from "../components/TypePokemon";
-import { Pokemon } from "../interface/pokemon";
-import { formatNumber } from "../utils/format";
+import TypePokemon from "../TypePokemon/TypePokemon";
+import { Pokemon } from "../../interface/pokemon";
+import { formatNumber } from "../../utils/format";
 
 // import style
-import "../styles/components/cardPokemon.scss";
+import "./cardPokemon.scss";
 
 /**
  * function CardPokemon render view card pokemon.
